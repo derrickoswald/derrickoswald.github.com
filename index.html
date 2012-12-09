@@ -27,21 +27,22 @@
                     In many venues, such as hotels, airports, and conference centers,
                     one can connect to the local <a href="http://en.wikipedia.org/wiki/Wi-Fi">Wifi</a>,
                     and yet cannot access the internet.
-                    Although you are given an IP address, in order to browse or otherwise
+                    Even though you are given an IP address, to be able to browse or otherwise
                     exchange packets over TCP/IP you must first use a browser to login
                     using a supplied password or in some cases provide payment details.
                 </p>
                 <p>
-                    Before logging in however, it is often possible to bypass the paywall
+                    However, without logging in it is often possible to bypass the paywall
                     using a subset of Internet Protocol (IP) called
                     Internet Control Message Protocol
                     (<a href="http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol">ICMP</a>),
                     or more specifically,
                     <a href="http://en.wikipedia.org/wiki/Ping_(networking_utility)">Ping</a>.
                     That is, you cannot exchange TCP/IP packets (browse), but you can use "ping" to
-                    reach an external server.
+                    reach an external server - and it will reply back.
                 </p>
                 <p>
+                    With the ability to pass packets it's possible to "tunnel" a connection "out of band".
                     The idea is not mine, I first saw the <a href="http://www.cs.uit.no/%7Edaniels/PingTunnel/">Ping Tunnel</a>
                     project many years ago. I'm not sure who thought of it first, but there are
                     <a href="http://en.wikipedia.org/wiki/ICMP_tunnel">many implementations</a>.
@@ -51,7 +52,7 @@
                 <p>
                     The first breakthrough is the introduction of the
                     <a href="http://www.raspberrypi.org/">Raspberry Pi</a>.
-                    Instead of needing a large, power-sucking, always-on PC in order to provide
+                    Now, instead of needing a large, power-sucking, always-on PC in order to provide
                     the necessary remote server, this inexpensive, power-frugal, wall wart
                     Linux server has all the necessary bits to do the server side task.
                 </p>
@@ -83,6 +84,11 @@
                         in C# or Java land.
                         </li>
                     </ul>
+                </p>
+                <p>
+                    So, the complete idea, is to run a supporting program on a Raspberry Pi, and
+                    a client side proxy program on your PC or Android, so that you can browse
+                    the web using any ICMP capable connection. Both programs would be written in Go. 
                 </p>
             </section>
             <footer>
