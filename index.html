@@ -17,6 +17,7 @@
             <header>
                 <h1 class="header">PingoTunnel</h1>
                 <p class="header">HTTP over ICMP<br>using Go on the Pi</p>
+                <img src="images/pingo.png" alt="Pingo the penguin." width="185px">
                 <ul>
                     <li><a class="buttons github" href="https://github.com/derrickoswald">GitHub Profile</a></li>
                 </ul>
@@ -27,14 +28,15 @@
                     In many venues, such as hotels, airports, and conference centers,
                     one can connect to the local <a href="http://en.wikipedia.org/wiki/Wi-Fi">Wifi</a>,
                     and yet cannot access the internet.
-                    Even though you are given an IP address, to be able to browse or otherwise
-                    exchange packets over TCP/IP you must first use a browser to login
+                    Even though you are given an IP address, you cannot browse or otherwise
+                    exchange packets over TCP/IP until you first use a browser to login
                     using a supplied password or in some cases provide payment details.
                 </p>
                 <p>
-                    However, without logging in it is often possible to bypass the paywall
-                    using a subset of Internet Protocol (IP) called
-                    Internet Control Message Protocol
+                    However, even without logging in, it is often possible to bypass the paywall
+                    using a subset of Internet Protocol
+                    (<a href="http://en.wikipedia.org/wiki/Internet_Protocol">IP</a>)
+                    called Internet Control Message Protocol
                     (<a href="http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol">ICMP</a>),
                     or more specifically,
                     <a href="http://en.wikipedia.org/wiki/Ping_(networking_utility)">Ping</a>.
@@ -42,12 +44,12 @@
                     reach an external server - and it will reply back.
                 </p>
                 <p>
-                    With the ability to pass packets it's possible to "tunnel" a connection "out of band".
+                    With the ability to pass packets this way, it's possible to "tunnel" a connection "out of band".
                     The idea is not mine, I first saw the <a href="http://www.cs.uit.no/%7Edaniels/PingTunnel/">Ping Tunnel</a>
                     project many years ago. I'm not sure who thought of it first, but there are
                     <a href="http://en.wikipedia.org/wiki/ICMP_tunnel">many implementations</a>.
                     Since first looking into the problem space, two issues have made it feasible
-                    for me to attempt this.
+                    for me to attempt this at this time.
                 </p>
                 <p>
                     The first breakthrough is the introduction of the
