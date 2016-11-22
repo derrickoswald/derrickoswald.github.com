@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Welcome"
+date:   2016-11-22 20:27:39
+categories: init
+---
+Hi.
+
+Reading these posts won't make you any smarter. There are millions of other brighter people who have blogs that will do that.
+
+These posts also won't give you any insight that you couldn't get from a myriad of other places, since I'm not a thought leader.
+
+What I do hope to do, is give you something to think about, maybe entertain you, and possibly even make you laugh or cry.
+
+I do this as an exercise for my own benefit mostly, and to provide a landing place for topics that I can refer to and
+a way to provide references to others on things I may have explored first or deeper than they have.
+
+Don't expect too much. We'll see how it goes.
+
+**Derrick**
+

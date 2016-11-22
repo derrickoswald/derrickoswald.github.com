@@ -1,0 +1,12 @@
+# Site settings
+title: Curmudgeon Constructs
+email: derrick.oswald@gmail.com
+description: >
+  Things that I feel should be recorded somewhere. 
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://derrickoswald.github.io"
+twitter_username: derrick_oswald
+github_username:  derrickoswald
+
+# Build settings
+markdown: kramdown

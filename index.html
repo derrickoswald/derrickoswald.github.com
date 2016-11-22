@@ -1,105 +1,23 @@
-<!doctype html>
-<html>
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>PingoTunnel</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js" type="text/javascript"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-	   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    </head>
-    <body>
-        <div class="wrapper">
-            <header>
-                <h1 class="header">PingoTunnel</h1>
-                <p class="header">HTTP over ICMP<br>using Go on the Pi</p>
-                <img src="images/pingo.png" alt="Pingo the penguin." width="185px">
-                <ul>
-                    <li><a href="pi_setup.html">Setting up The Pi</a></li>
-                    <li><a class="buttons github" href="https://github.com/derrickoswald">GitHub Profile</a></li>
-                </ul>
-            </header>
-            <section>
-                <h1>Overview</h1>
-                <p>
-                    In many venues, such as hotels, airports, and conference centers,
-                    one can connect to the local <a href="http://en.wikipedia.org/wiki/Wi-Fi">Wifi</a>,
-                    and yet cannot access the internet.
-                    Even though you are given an IP address, you cannot browse or otherwise
-                    exchange packets over TCP/IP until you first use a browser to login
-                    using a supplied password or in some cases provide payment details.
-                </p>
-                <p>
-                    However, even without logging in, it is often possible to bypass the paywall
-                    using a subset of Internet Protocol
-                    (<a href="http://en.wikipedia.org/wiki/Internet_Protocol">IP</a>)
-                    called Internet Control Message Protocol
-                    (<a href="http://en.wikipedia.org/wiki/Internet_Control_Message_Protocol">ICMP</a>),
-                    or more specifically,
-                    <a href="http://en.wikipedia.org/wiki/Ping_(networking_utility)">Ping</a>.
-                    That is, you cannot exchange TCP/IP packets (browse), but you can use "ping" to
-                    reach an external server - and it will reply back.
-                </p>
-                <p>
-                    With the ability to pass packets this way, it's possible to "tunnel" a connection "out of band".
-                    The idea is not mine, I first saw the <a href="http://www.cs.uit.no/%7Edaniels/PingTunnel/">Ping Tunnel</a>
-                    project many years ago. I'm not sure who thought of it first, but there are
-                    <a href="http://en.wikipedia.org/wiki/ICMP_tunnel">many implementations</a>.
-                    Since first looking into the problem space, two issues have made it feasible
-                    for me to attempt this at this time.
-                </p>
-                <p>
-                    The first breakthrough is the introduction of the
-                    <a href="http://www.raspberrypi.org/">Raspberry Pi</a>.
-                    Now, instead of needing a large, power-sucking, always-on PC in order to provide
-                    the necessary remote server, this inexpensive, power-frugal, wall wart
-                    Linux server has all the necessary bits to do the server side task.
-                </p>
-                <p>
-                    The other breakthrough, is the introduction of the
-                    <a  href="http://golang.org">Go language</a>.
-                    If you've ever programmed on Linux, you know that it is about
-                    as much fun as poking a sharp stick in your eye - repeatedly.
-                    Although Go is only moderately better than that, it offers two
-                    compelling benefits:
-                    <ul>
-                        <li>
-                        It is self contained and portable.
-                        That is, if you can get Go running on your machine,
-                        you have everything that is needed... mostly.<br>
-                        It's like Java that way, in that the portability issues have been
-                        abstracted out for you and you can assume that a binary
-                        produced by Go will run without needing to upgrade every library or
-                        recompile the kernel on the target machine.
-                        This is especially important for execution
-                        on the Raspberry Pi and Android phones where the
-                        small size won't easily allow that.
-                        </li>
-                        <li>
-                        It is built for networking. This is Google's language of choice for
-                        new server installations and they know a bit about networking.
-                        Go has a lot of libraries that support networking and
-                        implementing this type of program is somewhat easier than
-                        in C# or Java land.
-                        </li>
-                    </ul>
-                </p>
-                <p>
-                    So, the complete idea, is to run a supporting program on a Raspberry Pi, and
-                    a client side proxy program on your PC or Android, so that you can browse
-                    the web using any ICMP capable connection. Both programs would be written in Go. 
-                </p>
-            </section>
-            <footer>
-                <p>
-                    <small>Hosted on <a href="https://pages.github.com">GitHub Pages</a></small>
-                </p>
-            </footer>
-        </div>
-        <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    </body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
